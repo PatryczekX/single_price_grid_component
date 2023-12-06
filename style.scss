@@ -1,4 +1,118 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
 * {
   font-family: "Karla", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  padding: 24px;
+  background-color: hsl(204, 43%, 93%);
+}
+.component {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(152, 166, 189, 0.4);
+}
+.header {
+  background-color: white;
+  font-size: 14px;
+
+  h1 {
+    color: hsl(179, 62%, 43%);
+  }
+  h2 {
+    color: hsl(71, 73%, 54%);
+  }
+  p {
+    line-height: 26px;
+
+    color: hsl(218, 22%, 67%);
+  }
+}
+.header,
+.subscription,
+.about-us {
+  padding: 24px;
+  display: grid;
+  gap: 20px;
+}
+.subscription,
+.about-us {
+  background-color: hsl(179, 62%, 43%);
+  color: white;
+}
+.subscription {
+  .pricing {
+    display: grid;
+    gap: 8px;
+    article {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      h2 {
+        font-size: 36px;
+      }
+      p {
+        color: hsl(204, 43%, 93%);
+      }
+    }
+  }
+  button {
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 0;
+    padding: 16px;
+    background-color: hsl(71, 73%, 54%);
+    color: white;
+    box-shadow: 0 0 30px rgba(74, 78, 83, 0.2);
+  }
+}
+.about-us {
+  filter: brightness(110%);
+  h1 {
+    font-weight: 400;
+  }
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    font-size: 14px;
+    color: hsl(192, 5%, 79%);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 12px;
+  }
+  .component {
+    display: grid;
+    max-width: 700px;
+    grid-template-columns: repeat(2, 1fr);
+    .header {
+      grid-column-start: span 2;
+    }
+    .header,
+    .subscription,
+    .about-us {
+      padding: 40px;
+      font-size: 16px;
+    }
+    .header p {
+      max-width: 550px;
+    }
+    .header h1 {
+      font-size: 26px;
+    }
+    .header h2 {
+      font-size: 18px;
+    }
+  }
 }
